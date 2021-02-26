@@ -9,8 +9,8 @@ const userSlice = createSlice({
         login: (state, action) => {
             state.user = action.payload
         },
-        signup: (state, action) => {
-            state.user = action.payload
+        logout: (state, action) => {
+            state.user = null
         }
     }
 })

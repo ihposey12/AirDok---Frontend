@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 const Signup = (props) => {
 
@@ -6,15 +7,30 @@ const Signup = (props) => {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.history.push('/')
+        setError("")
+        // props.history.push('/')
+        const payload = {
+            name,
+            username,
+            email,
+            password,
+        }
+        axios.post('http://localhost:3000/signup', payload)
+            .then(res => {
+                console.log(res)
+                if(res.data.error) {
+                    setError(res.data.error)
+                }
+            })
     }
 
     return (
         <div className='signup'>
-            <form className='signup-form'>
+            <form className='signup-form' onSubmit={handleSubmit}>
                 <h1>Signup Here</h1>
 
                 <input 
@@ -45,8 +61,9 @@ const Signup = (props) => {
                     onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <button onClick={handleSubmit} type='submit' className='signup-submit'>Submit</button>
+                <button type='submit' className='signup-submit'>Submit</button>
             </form>
+            {error}
         </div>
     )
 }
