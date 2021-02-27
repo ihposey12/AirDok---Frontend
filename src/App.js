@@ -5,14 +5,17 @@ import Login from './Auth/Login'
 import {Route, Router, Switch} from 'react-router'
 import history from './history'
 import MainPage from './Components/MainPage'
-import Application from './Components/Application'
-// import { selectUser } from './features/userSlice'
+import HomePage from './Components/HomePage'
+import AboutPage from './Components/AboutPage'
+import AccountPage from './Components/AccountPage'
 
 const App = () => {
   return (
     <Router history={history}>
       <Switch>
-        <Route path='/app' component={Application} />
+        <Route exact path='/home/account' component={AccountPage} />
+        <Route exact path='/home/about' component={AboutPage} />
+        <Route exact path='/home' component={HomePage} />
         <Route exact path='/' component={MainPage} />
         <Route exact path='/signup' component={(props) => <Signup {...props} />} />
         <Route exact path='/login' component={(props) => <Login {...props} />} />

@@ -1,22 +1,44 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { login } from '../store/user'
+import React from 'react'
+import { useSelector ,useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Login = (props) => {
-
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-
     const dispatch = useDispatch()
+    const usernameInput = useSelector(state => state.usernameInput)
+    const passwordInput = useSelector(state => state.passwordInput)
+    const api = 'http://localhost:3000/'
 
     const handleSubmit = (e) => {
         e.preventDefault()
         props.history.push('/')
-        dispatch(login({
-            name: username,
-            password: password,
-            loggedIn: true
-        }))
+        fetch(api + 'login', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify({
+                username: usernameInput,
+                password: passwordInput
+            })
+        })
+        .then(data => authResponse(data))
+    }
+
+    const authResponse = (data) => {
+        if(data.error) {
+            alert(data.error)
+        } else {
+            const token = data.token
+            localStorage.token = token
+            dispatch({
+                type: 'SET_USER',
+                user: {
+                    username: data.username,
+                    id: data.id
+                }
+            })
+            props.history.push('/home')
+        }
     }
 
     return (
@@ -25,20 +47,32 @@ const Login = (props) => {
                 <h1>Login Here</h1>
 
                 <input 
-                    type='username' 
-                    placeholder='Username' 
-                    value={username} 
-                    onChange={(e) => setUsername(e.target.value)} 
+                    label='Username' 
+                    placeholder='Username'
+                    name='username'
+                    onChange={(e) => dispatch({
+                        type: 'CHANGE_USERNAME_INPUT',
+                        value: e.target.value
+                    })} 
                 />
 
                 <input 
-                    type='password' 
+                    label='password' 
                     placeholder='Password' 
-                    value={password} 
-                    onChange={(e) => setPassword(e.target.value)}
+                    name='password'
+                    onChange={(e) => dispatch({
+                        type: 'CHANGE_PASSWORD_INPUT',
+                        value: e.target.value
+                    })}
                 />
 
-                <button onClick={handleSubmit} type='submit' className='login-submit'>Login</button>
+                <button onClick={(e) => handleSubmit(e)} type='submit' className='login-submit'>Login</button>
+                <p>
+                    Don't Have An Account?
+                    <Link to='/signup'>
+                        Signup
+                    </Link>
+                </p>
             </form>
         </div>
     )

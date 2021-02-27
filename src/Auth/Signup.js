@@ -13,20 +13,21 @@ const Signup = (props) => {
         e.preventDefault()
         setError("")
         // props.history.push('/')
-        const payload = {
+        const payload = {user: {
             name,
             username,
             email,
             password,
-        }
-        axios.post('http://localhost:3000/signup', payload)
+        }}
+            axios.post('http://localhost:3000/signup', payload)
             .then(res => {
-                console.log(res)
                 if(res.data.error) {
                     setError(res.data.error)
                 }
             })
     }
+
+    
 
     return (
         <div className='signup'>

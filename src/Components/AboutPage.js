@@ -1,9 +1,11 @@
 import React from 'react'
+import AppHeader from './AppHeader'
 
 const AboutPage = () => {
     return (
         <div>
-            About
+            <AppHeader />
+            Learn About JetDok
         </div>
     )
 }

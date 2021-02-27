@@ -1,9 +1,10 @@
 import React from 'react'
+import AppHeader from './AppHeader'
 
 const HomePage = () => {
     return (
         <div>
-            Homepage
+            <AppHeader />
         </div>
     )
 }

@@ -5,13 +5,13 @@ const NavBar = () => {
     return (
         <Fragment>
             <div>
-                <Link to='/app'>Home</Link>
+                <Link to='/home'>Home</Link>
             </div>
             <div>
-                <Link to='/app/about'>About</Link>
+                <Link to='/home/about'>About</Link>
             </div>
             <div>
-                <Link to='/app/account'>Account</Link>
+                <Link to='/home/account'>Account</Link>
             </div>
         </Fragment>
     )
