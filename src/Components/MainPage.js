@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     submit: {
         margin: theme.spacing(3, 0, 2),
     },
-  }));
+}));
 
 const MainPage = () => {
     const classes = useStyles();
@@ -33,38 +33,38 @@ const MainPage = () => {
     return (
         <Fragment>
             <Container component="main" maxWidth="xs">
-            <CssBaseline />
-            <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square></Grid>
-            <div className={classes.paper}>
-            <Typography component="h1" variant="h3">
-                AIR-DOK
+                <CssBaseline />
+                <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square></Grid>
+                <div className={classes.paper}>
+                    <Typography component="h1" variant="h3">
+                        AIR-DOK
             </Typography>
-            <br />
-            <form className={classes.form} noValidate>
-                <Button
-                    component={Link}
-                    to="/signup"
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="secondary"
-                    className={classes.submit}
-                >
-                    Sign Up
+                    <br />
+                    <form className={classes.form} noValidate>
+                        <Button
+                            component={Link}
+                            to="/signup"
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="secondary"
+                            className={classes.submit}
+                        >
+                            Sign Up
                 </Button>
-                <Button
-                    component={Link}
-                    to="/login"
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="secondary"
-                    className={classes.submit}
-                >
-                    Login
+                        <Button
+                            component={Link}
+                            to="/login"
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="secondary"
+                            className={classes.submit}
+                        >
+                            Login
                 </Button>
-            </form>
-            </div>
+                    </form>
+                </div>
             </Container>
 
         </Fragment>

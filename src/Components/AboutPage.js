@@ -1,11 +1,14 @@
 import React from 'react'
-import AppHeader from './AppHeader'
+import NavBar from './NavBar'
+import '../styles/about.css'
 
 const AboutPage = () => {
     return (
         <div>
-            <AppHeader />
-            Learn About JetDok
+            <NavBar />
+            <div className='about-div'>
+                hello
+            </div>
         </div>
     )
 }

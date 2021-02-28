@@ -1,11 +1,13 @@
-import React from 'react'
-import AppHeader from './AppHeader'
+import Card from './Card'
+import React, { Fragment } from 'react'
+import NavBar from './NavBar'
 
 const HomePage = () => {
     return (
-        <div>
-            <AppHeader />
-        </div>
+        <Fragment>
+            <NavBar />
+            <Card />
+        </Fragment>
     )
 }
 

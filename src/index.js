@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {reducer, initialState} from './redux/reducer'
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
+import { reducer, initialState } from './redux/reducer'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 const store = createStore(reducer, initialState,
   window.__REDUXDEVTOOLS_EXTENSION__ &&

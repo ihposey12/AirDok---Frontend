@@ -1,13 +1,13 @@
 import React from 'react'
 import Signup from './Auth/Signup'
 import Login from './Auth/Login'
-// import Logout from './Auth/Logout'
-import {Route, Router, Switch} from 'react-router'
+import { Route, Router, Switch } from 'react-router'
 import history from './history'
 import MainPage from './Components/MainPage'
 import HomePage from './Components/HomePage'
 import AboutPage from './Components/AboutPage'
 import AccountPage from './Components/AccountPage'
+import Foot from './Components/Foot'
 
 const App = () => {
   return (
@@ -21,6 +21,7 @@ const App = () => {
         <Route exact path='/login' component={(props) => <Login {...props} />} />
         {/* <Logout /> */}
       </Switch>
+      <Foot />
     </Router>
   )
 }

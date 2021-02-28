@@ -5,7 +5,7 @@ export const initialState = {
 }
 
 export const reducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'CHANGE_USERNAME_INPUT':
             return {
                 ...state,
