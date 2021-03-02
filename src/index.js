@@ -2,20 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { reducer, initialState } from './redux/reducer'
-import { createStore } from 'redux'
+import { store } from './store/index'
 import { Provider } from 'react-redux'
-
-const store = createStore(reducer, initialState,
-  window.__REDUXDEVTOOLS_EXTENSION__ &&
-  window.__REDUXDEVTOOLS_EXTENSION__())
+import 'semantic-ui-css/semantic.min.css'
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>,
+      <Provider store={store}>
+        <App />
+      </Provider>,
   document.getElementById('root')
 )
 

@@ -8,6 +8,7 @@ import HomePage from './Components/HomePage'
 import AboutPage from './Components/AboutPage'
 import AccountPage from './Components/AccountPage'
 import Foot from './Components/Foot'
+import { connect } from 'react-redux'
 
 const App = () => {
   return (
@@ -19,11 +20,15 @@ const App = () => {
         <Route exact path='/' component={MainPage} />
         <Route exact path='/signup' component={(props) => <Signup {...props} />} />
         <Route exact path='/login' component={(props) => <Login {...props} />} />
-        {/* <Logout /> */}
       </Switch>
       <Foot />
     </Router>
   )
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {}
+}
+
+export default connect(mapStateToProps)(App);

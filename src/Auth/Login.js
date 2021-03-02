@@ -53,7 +53,7 @@ const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.history.push('/')
+    // props.history.push('/')
     fetch(api + 'login', {
       method: 'POST',
       headers: {
@@ -64,24 +64,26 @@ const Login = (props) => {
         password: passwordInput
       })
     })
-      .then(data => authResponse(data))
+      .then(res => res.json())
+      .then(data => console.log(data))
   }
 
   const authResponse = (data) => {
-    if (data.error) {
-      alert(data.error)
-    } else {
-      const token = data.token
-      localStorage.token = token
-      dispatch({
-        type: 'SET_USER',
-        user: {
-          username: data.username,
-          id: data.id
-        }
-      })
-      props.history.push('/home')
-    }
+    // if (data.error) {
+    //   alert(data.error)
+    // } else {
+    //   console.log(data.token)
+    //   const token = data.token
+    //   localStorage.token = token
+    //   dispatch({
+    //     type: 'SET_USER',
+    //     user: {
+    //       username: data.username,
+    //       id: data.id
+    //     }
+    //   })
+    //   props.history.push('/home')
+    // }
   }
 
   return (

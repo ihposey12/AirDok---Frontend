@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/grid'
+import '../store/reducers.js'
 
 const useStyles = makeStyles({
     root: {
@@ -19,9 +20,53 @@ const useStyles = makeStyles({
 
 export default function MediaCard() {
     const classes = useStyles();
+    const dispatch = useDispatch()
+    const hangars = useSelector(state => state.hangars)
+
+    useEffect(() => {
+        const token = localStorage.token
+        if(hangars.length === 0) {
+            getHangars()
+        }
+    })
+
+    const getHangars = () => {
+        fetch('http://localhost:3000/hangars')
+        .then(res => res.json())
+        .then(hangars => {
+            console.log(hangars)
+        dispatch({
+            type: 'SET_HANGARS',
+            hangars: hangars
+        })})
+    }
+
+    const renderCard = () => {return hangars.map(hangar => (
+        <Grid className={classes.stack}>
+            <Card 
+            classname={classes.root}
+            id={hangar.id}>
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.media}
+                        image={hangar.picture}
+                        title={hangar.title}
+                    />
+                </CardActionArea>
+                <CardActions>
+                    <Button 
+                        size="small"
+                        color="secondary">
+                            Stack
+                    </Button>
+                </CardActions>
+            </Card>
+        </Grid>
+    ))}
 
     return (
-        <Card className={classes.root}>
+        <div>
+            {/* <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
@@ -46,6 +91,8 @@ export default function MediaCard() {
                     Learn More
         </Button>
             </CardActions>
-        </Card>
+        </Card> */}
+        {renderCard()}
+        </div>
     );
 }

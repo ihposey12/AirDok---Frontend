@@ -6,6 +6,7 @@ const AboutPage = () => {
     return (
         <div>
             <NavBar />
+            <br></br>
             <div className='about-div'>
                 hello
             </div>

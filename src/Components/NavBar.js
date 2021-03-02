@@ -3,32 +3,40 @@ import { Link } from 'react-router-dom'
 import '../styles/navbar.css'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Button from '@material-ui/core/button'
+import { Input, Menu } from "semantic-ui-react"
 
 const NavBar = () => {
     return (
-        <Fragment>
-            <div className='account-nav'>
-                <h1 className='title'>
-                    Air-Dok
-                    <Button component={Link} to='/home/account'>
-                        <div className='icon'>
-                            <AccountCircleIcon fontSize='large'>
+        <div>
+            <h1 className='title' class='ui center aligned header'>
+                Air-Dok
+            </h1>
+            <div class='ui clearing segment'>
+                <div className={'ui menu'}>
+                    <Menu secondary>
+                    <Menu.Item>
+                        <Button variant='contained' component={Link} color='secondary' to='/home'>Home</Button>
+                        <Button variant='contained' component={Link} color='secondary' to='/home/about'>About</Button>
+                    </Menu.Item>
+                        <div class='ui segment'>
+                            <Button component={Link} to='/home/account'>
+                                <AccountCircleIcon fontSize='large'>
                                 </AccountCircleIcon>
-                            </div>
-                    </Button>
-                </h1>
-                <Link to='/home/account'>
-                </Link>
-            </div>
-
-            <div className='nav-bar'>
-                <Button variant='contained' component={Link} color='secondary' to='/home'>Home</Button>
-                <Button variant='contained' component={Link} color='secondary' to='/home/about'>About</Button>
-                <div className='logout'>
-                <Button variant='contained' component={Link} color='secondary' to='/home/about'>Logout</Button>
+                            </Button>
+                        </div>
+                    </Menu>
                 </div>
             </div>
-        </Fragment>
+
+
+
+
+
+
+
+                
+        </div>
+
     )
 }
 
