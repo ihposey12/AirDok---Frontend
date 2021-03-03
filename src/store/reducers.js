@@ -1,10 +1,11 @@
 export const initialState = {
-    nameInput: '',
     usernameInput: '',
-    emailInput: '',
     passwordInput: '',
     user: null,
     hangars: [],
+    selectHangar: null,
+    startDate: null,
+    endDate: null
 }
 
 export const reducer = (state=initialState, action) => {
@@ -24,6 +25,21 @@ export const reducer = (state=initialState, action) => {
                 ...state,
                 hangars: action.hangars
             };
+        case 'SET_SELECT_HANGAR':
+            return {
+                ...state,
+                selectHangar: action.selectHangar
+            } 
+        case 'SET_START_DATE':
+            return {
+                ...state,
+                startDate: action.startDate
+            }
+        case 'SET_END_DATE':
+            return {
+                ...state,
+                endDate: action.endDate
+            }   
         default:
             return state;
     }

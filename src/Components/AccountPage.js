@@ -1,11 +1,12 @@
 import React from 'react'
 import NavBar from './NavBar'
+import Foot from './Foot'
 
 const AccountPage = () => {
     return (
         <div>
             <NavBar />
-            Account
+            <Foot />
         </div>
     )
 }

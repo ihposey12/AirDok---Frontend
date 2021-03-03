@@ -1,14 +1,14 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/navbar.css'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Button from '@material-ui/core/button'
-import { Input, Menu } from "semantic-ui-react"
+import { Menu } from "semantic-ui-react"
 
 const NavBar = () => {
     return (
         <div>
-            <h1 className='title' class='ui center aligned header'>
+            <h1 className='title'>
                 Air-Dok
             </h1>
             <div class='ui clearing segment'>
@@ -26,15 +26,7 @@ const NavBar = () => {
                         </div>
                     </Menu>
                 </div>
-            </div>
-
-
-
-
-
-
-
-                
+            </div>     
         </div>
 
     )

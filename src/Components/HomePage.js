@@ -1,9 +1,10 @@
 import React, { useEffect, Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import MediaCard from './Card'
+import Foot from './Foot'
+import HangarCard from './HangarCard'
 import NavBar from './NavBar'
 
-const HomePage = () => {
+const HomePage = (props) => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
 
@@ -34,7 +35,7 @@ const HomePage = () => {
             dispatch({
                 type: 'SET_USER',
                 user: {
-                    // username: data.username,
+                    username: data.username,
                     id: data.id
                 }
             })
@@ -44,7 +45,8 @@ const HomePage = () => {
     return (
         <Fragment>
             <NavBar />
-            <MediaCard />
+            <HangarCard history={props.history} />
+            <Foot />
         </Fragment>
     )
 }

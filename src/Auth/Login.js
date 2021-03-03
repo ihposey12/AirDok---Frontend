@@ -65,25 +65,25 @@ const Login = (props) => {
       })
     })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => authResponse(data))
   }
 
   const authResponse = (data) => {
-    // if (data.error) {
-    //   alert(data.error)
-    // } else {
-    //   console.log(data.token)
-    //   const token = data.token
-    //   localStorage.token = token
-    //   dispatch({
-    //     type: 'SET_USER',
-    //     user: {
-    //       username: data.username,
-    //       id: data.id
-    //     }
-    //   })
-    //   props.history.push('/home')
-    // }
+    if (data.error) {
+      alert(data.error)
+    } else {
+      console.log(data.token)
+      const token = data.token
+      localStorage.token = token
+      dispatch({
+        type: 'SET_USER',
+        user: {
+          username: data.username,
+          id: data.id
+        }
+      })
+      props.history.push('/home')
+    }
   }
 
   return (

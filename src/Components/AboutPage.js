@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar'
+import Foot from './Foot'
 import '../styles/about.css'
 
 const AboutPage = () => {
@@ -10,6 +11,7 @@ const AboutPage = () => {
             <div className='about-div'>
                 hello
             </div>
+            <Foot />
         </div>
     )
 }
