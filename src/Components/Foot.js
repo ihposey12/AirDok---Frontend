@@ -4,7 +4,7 @@ import '../styles/foot.css'
 
 const Foot = () => {
     return (
-        <div class="ui inverted segment">
+        <div class="ui inverted segment ui sticky">
           <div class="ui container">
             <div class="ui inverted secondary menu">
               <div>
@@ -15,13 +15,13 @@ const Foot = () => {
                   <Link to='/home/about'><h5><u>About</u></h5></Link>
               </div>
               <div class="right item">
-                <a href="https://www.linkedin.com/">
+                <a href="https://www.linkedin.com/in/isaac-posey">
                   <i class="linkedin icon"></i>
                 </a>
-                <a href="https://medium.com/">
+                <a href="https://ihposey.medium.com/">
                   <i class="medium m icon"></i>
                 </a>
-                <a href="https://github.com">
+                <a href="https://github.com/ihposey12">
                   <i class="github icon"></i>
                 </a>
               </div>

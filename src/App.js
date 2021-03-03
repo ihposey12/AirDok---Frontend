@@ -9,16 +9,18 @@ import HomePage from './Components/HomePage'
 import AboutPage from './Components/AboutPage'
 import AccountPage from './Components/AccountPage'
 import HangarView from './Components/HangarView'
+import UpcomingRentals from './Components/UpcomingRentals'
 
 const App = () => {
   return (
     <Router history={history}>
       <Switch>
+        <Route exact path='/home/my-rentals' component={UpcomingRentals} />
         <Route exact path='/home/hangar-view' component={HangarView} />
         <Route exact path='/home/account' component={AccountPage} />
         <Route exact path='/home/about' component={AboutPage} />
-        <Route exact path='/home' component={(props) => <HomePage {...props} />} />
         <Route exact path='/' component={MainPage} />
+        <Route exact path='/home' component={(props) => <HomePage {...props} />} />
         <Route exact path='/signup' component={(props) => <Signup {...props} />} />
         <Route exact path='/login' component={(props) => <Login {...props} />} />
       </Switch>

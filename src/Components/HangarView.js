@@ -8,7 +8,7 @@ const HangarView = () => {
     const hangar = useSelector(state => state.selectHangar)
 
     return (
-        <div>
+        <div class='ui clearing segment'>
             <NavBar />
             <h1>{hangar.title}<p>({hangar.airport_codesize})</p></h1>
             <img src={hangar.picture} alt='Selected Hangar'></img>
@@ -18,6 +18,7 @@ const HangarView = () => {
             <h3>${hangar.price}.00/Per Day</h3>
             <button>Select Dates</button>
             <button>Rent</button>
+            <i class="calendar alternate icon"></i>
             <Comments />
             <Foot />
         </div>

@@ -32,30 +32,30 @@ const HangarCard = (props) => {
 
     const renderCard = () => {
         return hangars.map(hangar => (
-        <div onClick={() => handleClick(hangar)} class="ui special cards">
-            <div class="ui purple card">
-                <div class="blurring dimmable image">
-                    <div class="ui inverted dimmer">
+                <div onClick={() => handleClick(hangar)} class="ui special cards" >
+                    <div class="ui purple card">
+                        <div class="blurring dimmable image ui blurring image segment">
+                            <div class="ui inverted dimmer">
+                                <div class="content">
+                                    <div class="center">
+                                        <div class="ui primary button">See More</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src={hangar.picture} alt='Airplane Hangar' />
+                        </div>
                         <div class="content">
-                            <div class="center">
-                                <div class="ui primary button">See More</div>
+                            <h2 class="header">{hangar.title}</h2>
+                            <div class="meta">
+                                <span class="date">{hangar.city}, {hangar.state}</span>
                             </div>
                         </div>
                     </div>
-                    <img src={hangar.picture} alt='Airplane Hangar' />
                 </div>
-                <div class="content">
-                    <h2 class="header">{hangar.title}</h2>
-                    <div class="meta">
-                        <span class="date">{hangar.city}, {hangar.state}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     ))}
 
     return (
-        <div>
+        <div style={{display: 'flex', flexWrap: 'wrap', padding: '25px', justifyContent: 'center', rowGap: '10px', columnGap: '15px'}}>
             {renderCard()}
         </div>
     );

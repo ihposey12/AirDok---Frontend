@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Comments = () => {
+const PastRentals = () => {
     return (
         <div>
-            
+
         </div>
     )
 }
 
-export default Comments
+export default PastRentals

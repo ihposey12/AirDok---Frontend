@@ -39,7 +39,7 @@ export const reducer = (state=initialState, action) => {
             return {
                 ...state,
                 endDate: action.endDate
-            }   
+            }  
         default:
             return state;
     }
