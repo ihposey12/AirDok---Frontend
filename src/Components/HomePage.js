@@ -36,7 +36,7 @@ const HomePage = (props) => {
             dispatch({
                 type: 'SET_USER',
                 user: {
-                    username: data.username,
+                    username: data.user,
                     id: data.id
                 }
             })
