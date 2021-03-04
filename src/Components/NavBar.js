@@ -1,12 +1,24 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import '../styles/navbar.css'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Button from '@material-ui/core/button'
 import { Menu } from "semantic-ui-react"
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import { Redirect } from 'react-router-dom'
 
 const NavBar = () => {
+    const dispatch = useDispatch()
+
+    const handleLogout = () => {
+        localStorage.clear()
+        dispatch({
+            type: 'SET_USER',
+            user: {}
+        })
+    }
+
     return (
         <div>
             <h1 className='title'>
@@ -27,9 +39,10 @@ const NavBar = () => {
                         <Button variant='contained' component={Link} color='secondary' to='/home/about'>About</Button>
                         <Button variant='contained' component={Link} color='secondary' to='/home/my-rentals'>Trip Dates</Button>
                     </Menu.Item>
-                        <div style={{display: 'flex', justifyContent: 'space-around'}}>
-                            <Button component={Link} to='/'>
-                                <ExitToAppIcon fontSize='medium'>
+                    {!localStorage.token && <Redirect to='/login' />}
+                        <div onClick={handleLogout} style={{display: 'flex', justifyContent: 'space-around'}}>
+                            <Button>
+                                <ExitToAppIcon fontSize='small'>
                                 </ExitToAppIcon>
                                 <p>Logout</p>
                             </Button>

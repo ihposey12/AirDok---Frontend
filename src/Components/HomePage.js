@@ -9,6 +9,7 @@ const HomePage = (props) => {
     const user = useSelector(state => state.user)
 
     useEffect(() => {
+        console.log(user)
         const token = localStorage.token
         if(!user) {
             if(localStorage.token) {

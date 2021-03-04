@@ -53,7 +53,7 @@ const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // props.history.push('/')
+    props.history.push('/home/account')
     fetch(api + 'login', {
       method: 'POST',
       headers: {
@@ -72,17 +72,13 @@ const Login = (props) => {
     if (data.error) {
       alert(data.error)
     } else {
-      console.log(data.token)
       const token = data.token
       localStorage.token = token
       dispatch({
         type: 'SET_USER',
-        user: {
-          username: data.username,
-          id: data.id
-        }
-      })
-      props.history.push('/home')
+        user: data.user
+        })
+      props.history.push('/home/account')
     }
   }
 

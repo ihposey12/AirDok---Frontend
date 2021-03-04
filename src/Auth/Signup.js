@@ -72,8 +72,6 @@ const Signup = (props) => {
       })
   }
 
-
-
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />

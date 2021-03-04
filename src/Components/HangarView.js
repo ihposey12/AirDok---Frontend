@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import Foot from './Foot'
 import NavBar from './NavBar'
 import Comments from './Comments'
+import Button from '@material-ui/core/button'
+import { Link } from 'react-router-dom'
 
 const HangarView = () => {
     const hangar = useSelector(state => state.selectHangar)
@@ -16,9 +18,7 @@ const HangarView = () => {
             <h4><b>Size:</b> {hangar.size}</h4>
             <h4>{hangar.city}, {hangar.state}</h4>
             <h3>${hangar.price}.00/Per Day</h3>
-            <button>Select Dates</button>
-            <button>Rent</button>
-            <i class="calendar alternate icon"></i>
+            <Button variant='contained' component={Link} color='secondary' to='/home/rent'>Rent</Button>
             <Comments />
             <Foot />
         </div>
