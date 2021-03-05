@@ -32,9 +32,9 @@ const HangarCard = (props) => {
 
     const renderCard = () => {
         return hangars.map(hangar => (
-            <div class='ui clearing segment three card grid'>
-                <div onClick={() => handleClick(hangar)} class="ui special card grid">
-                    <div class="ui purple card grid">
+            <div class='three column grid' style={{paddingLeft: '5%'}}>
+                <div onClick={() => handleClick(hangar)} class="ui special cards">
+                    <div class="ui purple card" style={{border: 'solid'}}>
                         <div class="blurring dimmable image ui blurring image segment">
                             <div class="ui inverted dimmer">
                                 <div class="content">
@@ -57,7 +57,7 @@ const HangarCard = (props) => {
     ))}
 
     return (
-        <div style={{display: 'flex', flexWrap: 'wrap', padding: '25px', justifyContent: 'center', rowGap: '10px', columnGap: '15px'}}>
+        <div style={{display: 'flex', flexWrap: 'wrap', padding: '25px', justifyContent: 'center', rowGap: '14px', columnGap: '1px', backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
             {renderCard()}
         </div>
     );

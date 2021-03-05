@@ -21,38 +21,35 @@ const NavBar = () => {
     }
 
     return (
-        <div>
+        <div style={{backgroundImage: 'url(https://media3.giphy.com/media/4N1FZFE5AGO3qrUGkw/source.gif)', paddingTop: '10px', border: 'solid'}}>
             <h1 className='title'>
-                Air-Dok
+                <Link href='/home' style={{color: 'black'}}>Air-Dok</Link>
             </h1>
-            <div class='ui segment' style={{display: 'flex', justifyContent: 'flex-end'}}>
-                <Button component={Link} to='/home/account'>
-                    <AccountCircleIcon fontSize='large'>
-                    </AccountCircleIcon>
-                        {user.username}
-                </Button>
-            </div>
-            <div class='ui clearing segment' style={{display: 'flex', justifyContent: 'center'}}>
-                <div class={'ui menu ui clearing segment'}>
+                <div style={{display: 'flex', justifyContent: 'center', paddingTop: '25px', alignContent: 'center'}}>
                     <Menu secondary>
-                    <Menu.Item>
-                        <Button variant='contained' component={Link} color='secondary' to='/home'>Home</Button>
-                        <Button variant='contained' component={Link} color='secondary' to='/home/about'>About</Button>
-                        <Button variant='contained' component={Link} color='secondary' to='/home/my-rentals'>Trip Dates</Button>
-                    </Menu.Item>
-                    {!localStorage.token && <Redirect to='/login' />}
-                        <div onClick={handleLogout} style={{display: 'flex', justifyContent: 'space-around'}}>
-                            <Button>
-                                <ExitToAppIcon fontSize='small'>
-                                </ExitToAppIcon>
-                                <p>Logout</p>
-                            </Button>
-                        </div>
+                        <Menu.Item style={{columnGap: '5%', backgroundColor: 'darkgrey'}}>
+                            <Button variant='contained' component={Link} color='secondary' to='/home' size='large'>       HOME       </Button>
+                            <Button variant='contained' component={Link} color='secondary' to='/home/about' size='large'>       ABOUT       </Button>
+                            <Button variant='contained' component={Link} color='secondary' to='/home/my-rentals' size='large'>       TRIPS       </Button>
+                        </Menu.Item>
                     </Menu>
                 </div>
-            </div>     
+                <div style={{display: 'flex', justifyContent: 'flex-end', paddingRight: '125px', paddingBottom: '30px'}}>
+                    <Button component={Link} to='/home/account'>
+                        <AccountCircleIcon fontSize='inherit' style={{fontSize: '40px'}}>
+                        </AccountCircleIcon>
+                            <p style={{fontWeight: 'bold', fontSize: '15px'}}>{user.username}</p>
+                    </Button>
+                </div>
+                {!localStorage.token && <Redirect to='/login' />}
+                <div onClick={handleLogout} style={{display: 'flex', justifyContent: 'flex-end', paddingRight: '25px', textDecoration: 'underline'}}>
+                    <Button>
+                        <ExitToAppIcon fontSize='large'>
+                        </ExitToAppIcon>
+                        <p>Logout</p>
+                    </Button>
+                </div>
         </div>
-
     )
 }
 
