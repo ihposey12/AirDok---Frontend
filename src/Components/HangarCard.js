@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import '../store/reducers.js'
 
@@ -6,34 +6,35 @@ const HangarCard = (props) => {
     const dispatch = useDispatch()
     const hangars = useSelector(state => state.hangars)
 
-    useEffect(() => {
-        if(hangars.length === 0) {
-            getHangars()
-        }
-    })
+    // useEffect(() => {
+    //     if(hangars.length === 0) {
+    //         getHangars()
+    //     }
+    // })
 
-    const getHangars = () => {
-        fetch('http://localhost:3000/hangars')
-        .then(res => res.json())
-        .then(hangars => {
-        dispatch({
-            type: 'SET_HANGARS',
-            hangars: hangars
-        })})
-    }
+    // const getHangars = () => {
+    //     fetch('http://localhost:3000/hangars')
+    //     .then(res => res.json())
+    //     .then(hangars => {
+    //     dispatch({
+    //         type: 'SET_HANGARS',
+    //         hangars: hangars
+    //     })})
+    // }
 
     const handleClick = (hangar) => {
         dispatch({
             type: 'SET_SELECT_HANGAR',
             selectHangar: hangar
         })
-        props.history.push('/home/hangar-view')
+        props.history.push(`/home/${hangar.id}`)
     }
 
     const renderCard = () => {
         return hangars.map(hangar => (
-                <div onClick={() => handleClick(hangar)} class="ui special cards" >
-                    <div class="ui purple card">
+            <div class='ui clearing segment three card grid'>
+                <div onClick={() => handleClick(hangar)} class="ui special card grid">
+                    <div class="ui purple card grid">
                         <div class="blurring dimmable image ui blurring image segment">
                             <div class="ui inverted dimmer">
                                 <div class="content">
@@ -52,6 +53,7 @@ const HangarCard = (props) => {
                         </div>
                     </div>
                 </div>
+            </div>
     ))}
 
     return (

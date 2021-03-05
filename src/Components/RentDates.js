@@ -6,7 +6,7 @@ import Button from '@material-ui/core/button'
 
 const RentDates = () => {
     return (
-        <div>
+        <div class='ui clearing segment'>
             <DateRangePicker initialSettings={{ startDate: '3/1/2021', endDate: '3/5/2021' }}>
                 <Button variant='contained' color='secondary'>Select Dates</Button>
             </DateRangePicker>

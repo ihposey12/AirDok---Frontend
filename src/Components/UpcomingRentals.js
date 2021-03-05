@@ -6,7 +6,8 @@ const UpcomingRentals = () => {
     return (
         <div>
             <NavBar />
-            <div>
+            <div class='ui clearing segment'>
+                <h1>YOUR TRIPS</h1>
                 I am your upcoming dates.
             </div>
             <Foot />

@@ -1,7 +1,7 @@
 export const initialState = {
     usernameInput: '',
     passwordInput: '',
-    user: null,
+    user: {username: ''},
     hangars: [],
     selectHangar: null,
     comments: [],

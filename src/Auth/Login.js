@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Avatar from '@material-ui/core/Avatar';
@@ -50,28 +50,6 @@ const Login = (props) => {
   const usernameInput = useSelector(state => state.usernameInput)
   const passwordInput = useSelector(state => state.passwordInput)
   const api = 'http://localhost:3000/'
-  const user = useSelector(state => state.user)
-
-  useEffect(() => {
-    console.log(user)
-    const token = localStorage.token
-    if(!user) {
-        if(localStorage.token) {
-            persistUser(token)
-        }
-    }
-})
-
-const persistUser = (token) => {
-    fetch('http://localhost:3000/persist', {
-        method: 'GET',
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    })
-    .then(res => res.json())
-    .then(data => authResponse(data))
-}
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -91,6 +69,7 @@ const persistUser = (token) => {
   }
 
   const authResponse = (data) => {
+    console.log(data)
     if (data.error) {
       alert(data.error)
     } else {
@@ -98,10 +77,7 @@ const persistUser = (token) => {
       localStorage.token = token
       dispatch({
         type: 'SET_USER',
-        user: {
-          username: data.user,
-          id: data.user.id
-        }
+        user: data.user
         })
       props.history.push('/home/account')
     }

@@ -8,8 +8,12 @@ const AboutPage = () => {
         <div>
             <NavBar />
             <br></br>
-            <div className='about-div'>
+            <div class='ui clearing segment'>
+                <h1>ABOUT ME</h1>
                 hello
+            </div>
+            <div class='ui clearing segment'>
+                <h1>ABOUT THE APP</h1>
             </div>
             <Foot />
         </div>

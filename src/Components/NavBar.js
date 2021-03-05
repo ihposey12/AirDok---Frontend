@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import '../styles/navbar.css'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
@@ -10,6 +10,7 @@ import { Redirect } from 'react-router-dom'
 
 const NavBar = () => {
     const dispatch = useDispatch()
+    const user = useSelector(state => state.user)
 
     const handleLogout = () => {
         localStorage.clear()
@@ -28,11 +29,11 @@ const NavBar = () => {
                 <Button component={Link} to='/home/account'>
                     <AccountCircleIcon fontSize='large'>
                     </AccountCircleIcon>
-                        ACCOUNT
+                        {user.username}
                 </Button>
             </div>
             <div class='ui clearing segment' style={{display: 'flex', justifyContent: 'center'}}>
-                <div className={'ui menu'} class='ui clearing segment'>
+                <div class={'ui menu ui clearing segment'}>
                     <Menu secondary>
                     <Menu.Item>
                         <Button variant='contained' component={Link} color='secondary' to='/home'>Home</Button>
