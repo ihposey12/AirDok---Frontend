@@ -5,6 +5,9 @@ const UserComments = () => {
     const user = useSelector(state => state.user)
 
     return (
+        <div>
+            {console.log(user)}
+            {user ?
         <div class='ui clearing segment'>
             <h1>ACCOUNT</h1>
             <div class='ui clearing segment'>
@@ -12,7 +15,9 @@ const UserComments = () => {
                 <h4>{user.name}</h4>
                 <h4>{user.email}</h4>
                 <h1>YOUR COMMENTS</h1>
-                {user.comments.map(comment => (
+            </div>
+            <div>
+                {user.comments?.map(comment => (
                     <div class='ui clearing segment'>
                         <h4>{comment.title}</h4>
                         <h5>{comment.description}</h5>
@@ -20,6 +25,10 @@ const UserComments = () => {
                     </div>
                 ))}
             </div>
+        </div>
+        :
+        null
+                }
         </div>
     )
 }

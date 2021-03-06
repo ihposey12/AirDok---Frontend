@@ -21,7 +21,7 @@ const NavBar = () => {
     }
 
     return (
-        <div style={{backgroundImage: 'url(https://media3.giphy.com/media/4N1FZFE5AGO3qrUGkw/source.gif)', paddingTop: '10px', border: 'solid'}}>
+        <div style={{backgroundImage: 'url(https://media3.giphy.com/media/4N1FZFE5AGO3qrUGkw/source.gif)', paddingTop: '10px', border: 'solid', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
             <h1 className='title'>
                 <Link href='/home' style={{color: 'black'}}>Air-Dok</Link>
             </h1>

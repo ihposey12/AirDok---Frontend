@@ -1,12 +1,21 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import HangarCard from './HangarCard'
 
 const PastRentals = () => {
+    const user = useSelector(state => state.user)
+    
     return (
         <div>
-            <div class='ui clearing segment'>
-                <h1>RENTAL HISTORY</h1>
-                I am your past rentals
+            {user ?
+            <div className='ui clearing segment'>
+                {user.hangar_rentals.map(rental => {
+                    return <HangarCard hangar={rental.hangar} key={rental.hangar.id} />
+                })}
             </div>
+            :
+            null
+}
         </div>
     )
 }

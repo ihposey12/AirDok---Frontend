@@ -10,11 +10,11 @@ import AboutPage from './Components/AboutPage'
 import AccountPage from './Components/AccountPage'
 import HangarView from './Components/HangarView'
 import UpcomingRentals from './Components/UpcomingRentals'
-import RentDates from './Components/RentDates'
 
 const App = () => {
   const dispatch = useDispatch()
   const hangars = useSelector(state => state.hangars)
+  const user = useSelector(state => state.user)
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -44,10 +44,13 @@ const App = () => {
     fetch('http://localhost:3000/hangars')
     .then(res => res.json())
     .then(hangars => {
-    dispatch({
+      if (!hangars.error) {
+        dispatch({
         type: 'SET_HANGARS',
         hangars: hangars
-    })})
+    })
+      }
+  })
   }
 
   return (
@@ -55,7 +58,6 @@ const App = () => {
       <Switch>
         <Route exact path='/home/account' component={AccountPage} />
         <Route exact path='/home/about' component={AboutPage} />
-        <Route exact path='/home/rent' component={RentDates} />
         <Route exact path='/home/my-rentals' component={UpcomingRentals} />
         <Route exact path='/home/:id' component={HangarView} />
         <Route exact path='/' component={MainPage} />

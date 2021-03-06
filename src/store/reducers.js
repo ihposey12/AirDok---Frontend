@@ -1,13 +1,13 @@
 export const initialState = {
     usernameInput: '',
     passwordInput: '',
-    user: {username: ''},
+    user: {username: '', hangar_rentals: []},
     hangars: [],
     selectHangar: null,
     comments: [],
     userComment: null,
-    startDate: null,
-    endDate: null
+    startDateInput: '',
+    endDateInput: '',
 }
 
 export const reducer = (state=initialState, action) => {
@@ -41,17 +41,22 @@ export const reducer = (state=initialState, action) => {
             return {
                 ...state,
                 comments: action.comments
-            }    
-        case 'SET_START_DATE':
-            return {
-                ...state,
-                startDate: action.startDate
             }
-        case 'SET_END_DATE':
+        case 'SET_START_DATE_INPUT':
             return {
                 ...state,
-                endDate: action.endDate
-            }  
+                startDateInput: action.startDateInput
+            }
+        case 'SET_END_DATE_INPUT':
+            return {
+                ...state,
+                endDateInput: action.endDateInput
+            }
+        case 'ADD_HANGAR_RENTAL':
+            return {
+                ...state,
+                user: {...state.user, hangar_rentals: [...state.user.hangar_rentals, action.newHangarRental]}
+            }
         default:
             return state;
     }

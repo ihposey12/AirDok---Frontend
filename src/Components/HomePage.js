@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Foot from './Foot'
-import HangarCard from './HangarCard'
+import Hangars from './Hangars'
 import NavBar from './NavBar'
 
 const HomePage = (props) => {
@@ -8,7 +8,7 @@ const HomePage = (props) => {
     return (
         <Fragment>
             <NavBar />
-            <HangarCard history={props.history} />
+            <Hangars history={props.history} />
             <Foot />
         </Fragment>
     )
