@@ -4,7 +4,7 @@ import '../styles/foot.css'
 
 const Foot = () => {
     return (
-        <div class="ui inverted segment ui sticky">
+        <div class="ui inverted segment ui sticky" style={{height: '100px'}}>
           <div class="ui container">
             <div class="ui inverted secondary menu">
               <div>

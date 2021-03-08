@@ -14,7 +14,6 @@ import UpcomingRentals from './Components/UpcomingRentals'
 const App = () => {
   const dispatch = useDispatch()
   const hangars = useSelector(state => state.hangars)
-  const user = useSelector(state => state.user)
 
   useEffect(() => {
     const token = localStorage.getItem('token')

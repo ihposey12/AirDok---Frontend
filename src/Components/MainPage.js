@@ -32,13 +32,13 @@ const MainPage = () => {
 
     return (
         <Fragment>
-            <Container component="main" maxWidth="xs">
+                <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square></Grid>
                 <div className={classes.paper}>
-                    <Typography component="h1" variant="h3">
-                        AIR-DOK
-            </Typography>
+                    <Typography component="h1" variant="h1" style={{fontStyle: 'chalkduster'}}>
+                        <h1 style={{fontFamily: 'chalkduster', fontSize: '80px'}}>AIR-DOK</h1>
+                    </Typography>
                     <br />
                     <form className={classes.form} noValidate>
                         <Button
@@ -48,10 +48,9 @@ const MainPage = () => {
                             fullWidth
                             variant="contained"
                             color="secondary"
-                            className={classes.submit}
-                        >
-                            Sign Up
-                </Button>
+                            className={classes.submit}>
+                            <h3>SIGN UP</h3>
+                        </Button>
                         <Button
                             component={Link}
                             to="/login"
@@ -59,14 +58,12 @@ const MainPage = () => {
                             fullWidth
                             variant="contained"
                             color="secondary"
-                            className={classes.submit}
-                        >
-                            Login
-                </Button>
+                            className={classes.submit}>
+                            <h3>LOGIN</h3>
+                        </Button>
                     </form>
                 </div>
-            </Container>
-
+                </Container>
         </Fragment>
     )
 }

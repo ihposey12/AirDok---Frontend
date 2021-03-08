@@ -7,22 +7,6 @@ const Hangars = (props) => {
     const dispatch = useDispatch()
     const hangars = useSelector(state => state.hangars)
 
-    // useEffect(() => {
-    //     if(hangars.length === 0) {
-    //         getHangars()
-    //     }
-    // })
-
-    // const getHangars = () => {
-    //     fetch('http://localhost:3000/hangars')
-    //     .then(res => res.json())
-    //     .then(hangars => {
-    //     dispatch({
-    //         type: 'SET_HANGARS',
-    //         hangars: hangars
-    //     })})
-    // }
-
     const handleClick = (hangar) => {
         dispatch({
             type: 'SET_SELECT_HANGAR',
@@ -37,7 +21,7 @@ const Hangars = (props) => {
     ))}
 
     return (
-        <div style={{display: 'flex', flexWrap: 'wrap', padding: '25px', justifyContent: 'center', rowGap: '14px', columnGap: '1px', backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+        <div style={{display: 'flex', flexWrap: 'wrap', padding: '25px', justifyContent: 'center', rowGap: '14px', columnGap: '1px', backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', border: 'solid 20px', borderRadius: '25px'}}>
             {renderCard()}
         </div>
     );

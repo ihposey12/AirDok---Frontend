@@ -2,7 +2,7 @@ import React from 'react'
 
 const Checkout = () => {
     return (
-        <div>
+        <div class='ui clearing segment' style={{display: 'flex', justifyContent: 'center'}}>
             <form>
                 <label>
                     <div class='ui clearing segment'>

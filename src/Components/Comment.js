@@ -3,9 +3,12 @@ import React from 'react'
 const Comment = ({comment}) => {
     return (
         <div>
+            <br></br>
             <h4>{comment.title}</h4>
+            <br></br>
             <h5>{comment.description}</h5>
-            <h6>{comment.rating}</h6>
+            <br></br>
+            <h6>Rating: {comment.rating}</h6>
         </div>
     )
 }

@@ -7,6 +7,7 @@ import Button from '@material-ui/core/button'
 import { Menu } from "semantic-ui-react"
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import { Redirect } from 'react-router-dom'
+import '../App.css'
 
 const NavBar = () => {
     const dispatch = useDispatch()
@@ -21,9 +22,9 @@ const NavBar = () => {
     }
 
     return (
-        <div style={{backgroundImage: 'url(https://media3.giphy.com/media/4N1FZFE5AGO3qrUGkw/source.gif)', paddingTop: '10px', border: 'solid', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+        <div style={{backgroundImage: 'url(https://media3.giphy.com/media/4N1FZFE5AGO3qrUGkw/source.gif)', paddingTop: '120px', border: 'solid 20px', backgroundRepeat: 'repeat', backgroundSize: 'cover', borderRadius: '25px'}}>
             <h1 className='title'>
-                <Link href='/home' style={{color: 'black'}}>Air-Dok</Link>
+                <Link to='/home' style={{color: 'black'}}>Air-Dok</Link>
             </h1>
                 <div style={{display: 'flex', justifyContent: 'center', paddingTop: '25px', alignContent: 'center'}}>
                     <Menu secondary>
@@ -34,7 +35,7 @@ const NavBar = () => {
                         </Menu.Item>
                     </Menu>
                 </div>
-                <div style={{display: 'flex', justifyContent: 'flex-end', paddingRight: '125px', paddingBottom: '30px'}}>
+                <div style={{display: 'flex', justifyContent: 'flex-end', paddingRight: '250px'}}>
                     <Button component={Link} to='/home/account'>
                         <AccountCircleIcon fontSize='inherit' style={{fontSize: '40px'}}>
                         </AccountCircleIcon>

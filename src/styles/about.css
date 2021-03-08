@@ -1,9 +1,10 @@
 .about-div {
     display: flex;
     justify-content: center;
-    width: 400px;
+    width: 200px;
     border: 15px green solid;
     padding: 50px;
     margin: auto;
     top: 50%;
+    height: auto;
 }

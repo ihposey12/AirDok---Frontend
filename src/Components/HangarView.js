@@ -80,13 +80,20 @@ const HangarView = () => {
             <div class='ui clearing segment'>
                 <h1>{hangar.title}<p>({hangar.airport_codesize})</p></h1>
                 <img src={hangar.picture} alt='Selected Hangar'></img>
-                <h3>{hangar.description}</h3>
-                <h4><b>Size:</b> {hangar.size}</h4>
-                <h4>{hangar.city}, {hangar.state}</h4>
+                <br></br>
+                <h2>{hangar.description}</h2>
+                <br></br>
+                <h3><b>Size:</b> <u>{hangar.size}</u></h3>
+                <br></br>
+                <h3><b>Where</b>: <u>{hangar.city}, {hangar.state}</u></h3>
+                <br></br>
                 <h3>${hangar.price}.00/Per Day</h3>
+                <br></br>
                 <Button variant='contained' color='secondary' onClick={() => setModalIsOpen(true)}>Rent</Button>
+                <br></br>
+                <br></br>
                 <Modal isOpen={modalIsOpen}>
-                <form>
+                <form class='ui clearing segment' style={{display: 'flex', justifyContent: 'center'}}>
                     <label>
                         Start Date:
                         <input type='date' value={startDate} onChange={(e) => setStartDate(e.target.value)}></input>
@@ -98,16 +105,24 @@ const HangarView = () => {
                         <i class="calendar alternate icon" fontStyle='large'></i>
                     </label>
                     <br></br>
-                    <p>(Please enter dates in 'MM/DD/YYYY' format)</p>
                 </form>
+                <p style={{display: 'flex', justifyContent: 'center'}}>(Please enter dates in 'MM/DD/YYYY' format)</p>
+                <br></br>
+                <p style={{display: 'flex', justifyContent: 'center'}}>*You are paying for the reservation of the first day. If you have a reservation with multiple days, you will not be charged the full anmount until the completion of your reservation dates.</p>
                 {Checkout()}
-                <div>
-                    <br></br>
+                <h1 style={{display: 'flex', justifyContent: 'center'}}>{hangar.price}.00/Per Day</h1>
+                <br></br>
+                <div style={{display: 'flex', justifyContent: 'center'}}>
                     <Button variant='contained' color='secondary' onClick={handleSubmit}>Confirm</Button>
+                    <br></br>
+                    <br></br>
                     <button onClick={() => setModalIsOpen(false)}>X</button>
                 </div>
+                <p>*This form is for display purposes only. Your information will not be saved.*</p>
                 </Modal>
             </div>
+            <br></br>
+            <br></br>
             <div>
                 <Button variant='contained' color='secondary'>New Comment</Button>
             </div>

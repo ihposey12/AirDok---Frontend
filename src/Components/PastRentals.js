@@ -6,16 +6,16 @@ const PastRentals = () => {
     const user = useSelector(state => state.user)
     
     return (
-        <div>
+        <div class='ui clearing segment' style={{display: 'flex', justifyContent: 'center'}}>
             {user ?
-            <div className='ui clearing segment'>
+            <div style={{display: 'flex', justifyContent: 'center', rowGap: '1rem'}}>
                 {user.hangar_rentals.map(rental => {
-                    return <HangarCard hangar={rental.hangar} key={rental.hangar.id} />
+                    return <HangarCard hangar={rental.hangar} key={rental.hangar.id} rentaldate={rental.startDate}/>
                 })}
             </div>
             :
             null
-}
+            }
         </div>
     )
 }
