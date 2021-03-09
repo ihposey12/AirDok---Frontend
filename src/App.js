@@ -10,6 +10,7 @@ import AboutPage from './Components/AboutPage'
 import AccountPage from './Components/AccountPage'
 import HangarView from './Components/HangarView'
 import UpcomingRentals from './Components/UpcomingRentals'
+import PastRentals from './Components/PastRentals'
 import './App.css'
 
 const App = () => {
@@ -56,6 +57,7 @@ const App = () => {
   return (
     <Router history={history}>
       <Switch>
+        <Route exact path='/home/history' component={PastRentals} />
         <Route exact path='/home/account' component={AccountPage} />
         <Route exact path='/home/about' component={AboutPage} />
         <Route exact path='/home/my-rentals' component={UpcomingRentals} />

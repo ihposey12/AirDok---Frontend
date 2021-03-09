@@ -31,6 +31,7 @@ const NavBar = () => {
                             <Button variant='contained' component={Link} color='secondary' to='/home' size='large'>       HOME       </Button>
                             <Button variant='contained' component={Link} color='secondary' to='/home/about' size='large'>       ABOUT       </Button>
                             <Button variant='contained' component={Link} color='secondary' to='/home/my-rentals' size='large'>       TRIPS       </Button>
+                            <Button variant='contained' component={Link} color='secondary' to='/home/history' size='large'>History</Button>
                         </Menu.Item>
                     </Menu>
                 </div>

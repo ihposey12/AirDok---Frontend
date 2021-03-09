@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import Foot from './Foot'
 import { useSelector } from 'react-redux'
 import HangarCard from './HangarCard'
+import Button from '@material-ui/core/button'
 
 const UpcomingRentals = () => {
     const user = useSelector(state => state.user)
@@ -10,7 +11,7 @@ const UpcomingRentals = () => {
     return (
         <div>
             <NavBar />
-            <div class='ui clearing segment'>
+            <div class='ui clearing segment' style={{backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)'}}>
                 <br></br>
                 <h4 style={{display: 'flex', justifyContent: 'center', fontSize: '40px', fontFamily: 'fantasy', fontWeight: '15px', fontStyle: 'italic'}}><u>UPCOMING TRIPS</u></h4>
                 {user ?
@@ -26,6 +27,9 @@ const UpcomingRentals = () => {
                                     <h4>Arrival: {rental.start_date}</h4>
                                     <h4>Departure: {rental.end_date}</h4>
                                     <br></br>
+                                </div>
+                                <div>
+                                    <Button variant='contained' color='secondary'>Cancel</Button>
                                 </div>
                             </div>
                     })}

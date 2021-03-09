@@ -11,9 +11,6 @@ const HomePage = (props) => {
             <NavBar />
             <br></br>
             <br></br>
-            <div class='home-title' style={{display: 'flex', justifyContent: 'center', backgroundColor: 'lightgray'}}>
-                <h1 style={{fontSize: '40px', fontFamily: 'fantasy', fontStyle: 'italic', fontWeight: '15px'}}><u>HANGARS</u></h1>
-            </div>
             <Hangars history={props.history} />
             <Foot />
         </div>

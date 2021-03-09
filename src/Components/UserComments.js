@@ -38,7 +38,10 @@ const UserComments = () => {
                     <div class='ui clearing segment'>
                         <h4>{comment.title}</h4>
                         <h5>{comment.description}</h5>
-                        <h6>{comment.created_at}</h6>
+                        <h5>Rating: {comment.rating}</h5>
+                        <br></br>
+                        <h6>User: {comment.username}</h6>
+                        <br></br>
                         <Button variant='contained' color='secondary'>Delete</Button>
                     </div>
                 ))}

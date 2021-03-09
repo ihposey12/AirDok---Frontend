@@ -56,7 +56,10 @@ const Signup = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setError("")
+    if(name === '' && username === '' && email === '' && password === '') {
+      return alert('Please fill out the signup form correctly.')
+    }
+    setError("Please fill the form out correctly!")
     props.history.push('/')
     const payload = {
       user: {
@@ -163,10 +166,10 @@ const Signup = (props) => {
                 </Link>
               </Grid>
             </Grid>
+            {error}
           </form>
         </div>
       </Grid>
-      {error}
     </Grid>
   )
 }

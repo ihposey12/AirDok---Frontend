@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import NavBar from './NavBar'
 import Foot from './Foot'
-import PastRentals from './PastRentals'
 import UserComments from './UserComments'
 
 const AccountPage = () => {
@@ -32,10 +31,9 @@ const AccountPage = () => {
       })
 
     return (
-        <div>
+        <div style={{backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)'}}>
             <NavBar />
             <UserComments />
-            <PastRentals />
             <Foot />
         </div>
     )
