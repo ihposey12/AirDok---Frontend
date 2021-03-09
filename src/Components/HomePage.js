@@ -7,10 +7,8 @@ import '../App.css'
 const HomePage = (props) => {
 
     return (
-        <div style={{backgroundColor: 'lightgray'}}>
+        <div style={{backgroundColor: 'black'}}>
             <NavBar />
-            <br></br>
-            <br></br>
             <Hangars history={props.history} />
             <Foot />
         </div>

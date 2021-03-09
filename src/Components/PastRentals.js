@@ -13,19 +13,18 @@ const PastRentals = () => {
             <div class='ui clearing segment' style={{backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)'}}>
                 <br></br>
                 <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <h1 style={{textAlign: 'center', fontSize: '40px', fontFamily: 'fantasy', fontWeight: '450px', fontStyle: 'italic'}}><u>Past Reservations</u></h1>
+                    <h1 style={{textAlign: 'center', fontSize: '40px', fontFamily: 'fantasy', fontWeight: '450px', fontStyle: 'italic'}}><u>RESERVAION HISTORY</u></h1>
                     <br></br>
                     {user ?
-                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', rowGap: '1rem'}} class='ui clearing segment'>
+                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', rowGap: '1rem'}} >
                         {user.hangar_rentals?.map(rental => {
                             // return <HangarCard hangar={rental.hangar} key={rental.hangar.id} />
                             return <div class='ui clearing segment'>
-                                <br></br>
                                 <Link to={rental.hangar.id}><h4>{rental.hangar.title}</h4></Link>
                                 <br></br>
-                                Arrive: {rental.start_date}
+                                Arrived: {rental.start_date}
                                 <br></br>
-                                Depart: {rental.end_date}
+                                Departed: {rental.end_date}
                             </div>
                         })}
                     </div>

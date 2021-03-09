@@ -2,13 +2,12 @@ import React from 'react'
 
 const Comment = ({comment}) => {
     return (
-        <div>
-            <br></br>
+        <div class='ui clearing segment'>
             <h4>{comment.title}</h4>
-            <br></br>
             <h5>{comment.description}</h5>
+            <h5>Rating: {comment.rating}</h5>
             <br></br>
-            <h6>Rating: {comment.rating}</h6>
+            <h6><b>Author</b>: {comment.username}</h6>
         </div>
     )
 }

@@ -8,6 +8,7 @@ import Modal from 'react-modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-daterangepicker/daterangepicker.css'
 import Checkout from './Checkout'
+import CommentForm from './CommentForm'
 
 const HangarView = () => {
     const dispatch = useDispatch()
@@ -18,6 +19,7 @@ const HangarView = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const [startDate, setStartDate] = useState('')
     const [endDate, setEndDate] = useState('')
+    const [commentFormOpen, setCommentFormOpen] = useState(false)
     console.log(user)
 
     useEffect(() => {
@@ -63,11 +65,11 @@ const HangarView = () => {
             })
         })
         .then(res => res.json())
-        .then(rental => {
-            console.log(rental)
+        .then(data => {
+            console.log(data)
             dispatch({
                 type: 'ADD_HANGAR_RENTAL',
-                newHangarRental: rental
+                user: data.user
             })
         })
     }
@@ -124,16 +126,16 @@ const HangarView = () => {
             <br></br>
             <br></br>
             <div>
-                <Button variant='contained' color='secondary'>New Comment</Button>
+                <Button onClick={() => setCommentFormOpen(true)} variant='contained' color='secondary'>New Comment</Button>
+            </div>
+            <div>
+                {commentFormOpen ? <CommentForm setCommentFormOpen={setCommentFormOpen} hangar={hangar} /> : null}
             </div>
             <div class='ui clearing segment'>
                 <h1>COMMENTS</h1>
                 {hangar.comments.map(comment => {
                     return <Comment key={comment.id} comment={comment} />
                 })}
-            </div>
-            <div>
-                
             </div>
             <Foot />
         </div>

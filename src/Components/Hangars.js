@@ -23,7 +23,7 @@ const Hangars = (props) => {
     return (
         <div class='ui clearing segment' style={{backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg'}}>
             <div class='home-title' style={{display: 'flex', justifyContent: 'center'}}>
-                <h1 style={{fontSize: '40px', fontFamily: 'fantasy', fontStyle: 'italic', fontWeight: '15px'}}><u>HANGARS</u></h1>
+                <h1 style={{fontSize: '40px', fontFamily: 'fantasy', fontStyle: 'italic', fontWeight: '15px'}}><u>FIND YOUR DOK</u></h1>
             </div>
             <br></br>
             <div style={{display: 'flex', flexWrap: 'wrap', padding: '25px', justifyContent: 'center', rowGap: '14px', columnGap: '1px', backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', border: 'solid 10px'}}>

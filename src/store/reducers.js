@@ -7,7 +7,10 @@ export const initialState = {
     comments: [],
     userComment: null,
     startDateInput: '',
-    endDateInput: ''
+    endDateInput: '',
+    commentTitle: '',
+    commentDescription: '',
+    commentRating: '1'
 }
 
 export const reducer = (state=initialState, action) => {
@@ -55,7 +58,33 @@ export const reducer = (state=initialState, action) => {
         case 'ADD_HANGAR_RENTAL':
             return {
                 ...state,
-                user: {...state?.user, hangar_rentals: [...state.user?.hangar_rentals, action.newHangarRental]}
+                user: action.user
+            }
+        case 'SET_COMMENT_TITLE':
+            return {
+                ...state,
+                commentTitle: action.commentTitle
+            }
+        case 'SET_COMMENT_DESCRIPTION':
+            return {
+                ...state,
+                commentDescription: action.commentDescription
+            }
+        case 'SET_COMMENT_RATING':
+            return {
+                ...state,
+                commentRating: action.commentRating
+            }
+        case 'UPDATE_HANGARS':
+            return {
+                ...state,
+                hangars: state.hangars.map(hangar => {
+                    if(hangar.id === action.hangar.id) {
+                        return action.hangar
+                    } else {
+                        return hangar
+                    }
+                })
             }
         default:
             return state;

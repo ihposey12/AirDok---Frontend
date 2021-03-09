@@ -33,6 +33,7 @@ const AccountPage = () => {
     return (
         <div style={{backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)'}}>
             <NavBar />
+            <br></br>
             <UserComments />
             <Foot />
         </div>

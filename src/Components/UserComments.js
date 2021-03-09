@@ -1,9 +1,10 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Button from '@material-ui/core/button'
 
 const UserComments = () => {
     const user = useSelector(state => state.user)
+    const dispatch = useDispatch()
 
     const handleDelete = (user) => {
         const token = localStorage.token
@@ -18,8 +19,35 @@ const UserComments = () => {
             window.location.href = '/'
     }
 
+    const commentDelete = (comment) => {
+        const token = localStorage.token
+        fetch('http:localhost:3000/comments', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`
+            },
+        })
+        .then(res => res.json())
+        .then(data => {
+            dispatch({
+                type: 'SET_USER',
+                user: data.user
+            })
+            dispatch({
+                type: 'SET_SELECT_HANGAR',
+                selectHangar: data.hangar
+            })
+            dispatch({
+                type: 'UPDATE_HANGARS',
+                hangar: data.hangar
+            })
+        })
+    }
+
     return (
         <div style={{display: 'flex', justifyContent: 'center'}}>
+            <br></br>
             {console.log(user)}
             {user ?
         <div class='ui clearing segment'>
@@ -32,6 +60,7 @@ const UserComments = () => {
             </div>
             <br></br>
             <br></br>
+            <br></br>
             <div>
             <h1>YOUR COMMENTS</h1>
                 {user.comments?.map(comment => (
@@ -42,7 +71,7 @@ const UserComments = () => {
                         <br></br>
                         <h6>User: {comment.username}</h6>
                         <br></br>
-                        <Button variant='contained' color='secondary'>Delete</Button>
+                        <Button onClick={() => commentDelete(comment)} variant='contained' color='secondary'>Delete</Button>
                     </div>
                 ))}
             </div>
