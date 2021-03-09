@@ -17,12 +17,14 @@ const Hangars = (props) => {
 
     const renderCard = () => {
         return hangars.map(hangar => (
-            <HangarCard hangar={hangar} key={hangar.id} handleClick={handleClick} />
+            <HangarCard hangar={hangar} key={hangar.id} handleClick={() => handleClick(hangar)} />
     ))}
 
     return (
-        <div style={{display: 'flex', flexWrap: 'wrap', padding: '25px', justifyContent: 'center', rowGap: '14px', columnGap: '1px', backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', border: 'solid 20px', borderRadius: '25px'}}>
-            {renderCard()}
+        <div class='ui clearing segment' style={{backgroundColor: 'lightgray'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', padding: '25px', justifyContent: 'center', rowGap: '14px', columnGap: '1px', backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', border: 'solid 10px'}}>
+                {renderCard()}
+            </div>
         </div>
     );
 }

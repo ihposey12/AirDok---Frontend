@@ -10,6 +10,7 @@ import AboutPage from './Components/AboutPage'
 import AccountPage from './Components/AccountPage'
 import HangarView from './Components/HangarView'
 import UpcomingRentals from './Components/UpcomingRentals'
+import './App.css'
 
 const App = () => {
   const dispatch = useDispatch()

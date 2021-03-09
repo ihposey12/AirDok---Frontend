@@ -8,6 +8,7 @@ import Modal from 'react-modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-daterangepicker/daterangepicker.css'
 import Checkout from './Checkout'
+import CommentForm from './CommentForm'
 
 const HangarView = () => {
     const dispatch = useDispatch()
@@ -89,7 +90,7 @@ const HangarView = () => {
                 <br></br>
                 <h3>${hangar.price}.00/Per Day</h3>
                 <br></br>
-                <Button variant='contained' color='secondary' onClick={() => setModalIsOpen(true)}>Rent</Button>
+                <Button variant='contained' color='secondary' onClick={() => setModalIsOpen(true)}>Reserve</Button>
                 <br></br>
                 <br></br>
                 <Modal isOpen={modalIsOpen}>
@@ -132,6 +133,7 @@ const HangarView = () => {
                     return <Comment key={comment.id} comment={comment} />
                 })}
             </div>
+            <CommentForm />
             <Foot />
         </div>
         :

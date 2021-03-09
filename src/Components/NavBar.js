@@ -1,12 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import '../styles/navbar.css'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Button from '@material-ui/core/button'
 import { Menu } from "semantic-ui-react"
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import { Redirect } from 'react-router-dom'
 import '../App.css'
 
 const NavBar = () => {
@@ -22,7 +21,7 @@ const NavBar = () => {
     }
 
     return (
-        <div style={{backgroundImage: 'url(https://media3.giphy.com/media/4N1FZFE5AGO3qrUGkw/source.gif)', paddingTop: '120px', border: 'solid 20px', backgroundRepeat: 'repeat', backgroundSize: 'cover', borderRadius: '25px'}}>
+        <div style={{backgroundImage: 'url(https://media3.giphy.com/media/4N1FZFE5AGO3qrUGkw/source.gif)', paddingTop: '120px', border: 'solid 5px', backgroundRepeat: 'repeat', backgroundSize: 'cover'}}>
             <h1 className='title'>
                 <Link to='/home' style={{color: 'black'}}>Air-Dok</Link>
             </h1>

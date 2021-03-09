@@ -1,3 +1,14 @@
-body {
-    background-color: black;
+.background {
+    background-image: url('https://cdn.dribbble.com/users/743832/screenshots/3965345/day63-64_paper-airplane_tx.gif');
+    background-size: cover;
+    height: 100vh;
+}
+
+html {
+    background-color: lightgray;
+}
+
+#root {
+    background-color: lightgray;
+    border: solid 10px;
 }

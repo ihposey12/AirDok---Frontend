@@ -1,10 +1,15 @@
-.about-div {
+.about {
     display: flex;
     justify-content: center;
-    width: 200px;
-    border: 15px green solid;
-    padding: 50px;
-    margin: auto;
-    top: 50%;
-    height: auto;
+}
+
+.about-app {
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    border: solid gray;
+    height: 400px;
+    width: 600px;
+    border-radius: 25px;
 }

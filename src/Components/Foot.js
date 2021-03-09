@@ -8,11 +8,12 @@ const Foot = () => {
           <div class="ui container">
             <div class="ui inverted secondary menu">
               <div>
-                <h5><u>Developer</u>:</h5>
                 <h5><i class="plane icon app-icon"></i> Hunter Posey <i class="plane icon app-icon"></i></h5>
               </div>
               <div>
                   <Link to='/home/about'><h5><u>About</u></h5></Link>
+                  <br></br>
+                  <Link to='/home/analytics'><h5><u>Analytics</u></h5></Link>
               </div>
               <div class="right item">
                 <a href="https://www.linkedin.com/in/isaac-posey">

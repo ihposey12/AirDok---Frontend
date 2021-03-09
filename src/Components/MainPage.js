@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,14 +13,13 @@ const useStyles = makeStyles((theme) => ({
         minHeight: '100vh',
     },
     paper: {
-        marginTop: theme.spacing(35),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        whiteSpace: 'nowrap',
     },
     form: {
         width: '100%',
-        marginTop: theme.spacing(3),
     },
     submit: {
         margin: theme.spacing(3, 0, 2),
@@ -31,14 +30,17 @@ const MainPage = () => {
     const classes = useStyles();
 
     return (
-        <Fragment>
+        <div>
+            <div className='background'>
                 <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square></Grid>
                 <div className={classes.paper}>
-                    <Typography component="h1" variant="h1" style={{fontStyle: 'chalkduster'}}>
-                        <h1 style={{fontFamily: 'chalkduster', fontSize: '80px'}}>AIR-DOK</h1>
+                    <Typography style={{fontStyle: 'chalkduster', marginTop: '35vh', width: 'auto'}}>
+                        <h1 style={{fontFamily: 'chalkduster', fontSize: '120px'}}>AIR-DOK</h1>
                     </Typography>
+                </div>
+                <div>
                     <br />
                     <form className={classes.form} noValidate>
                         <Button
@@ -47,7 +49,7 @@ const MainPage = () => {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            color="secondary"
+                            color="primary"
                             className={classes.submit}>
                             <h3>SIGN UP</h3>
                         </Button>
@@ -57,14 +59,15 @@ const MainPage = () => {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            color="secondary"
+                            color="primary"
                             className={classes.submit}>
                             <h3>LOGIN</h3>
                         </Button>
                     </form>
                 </div>
                 </Container>
-        </Fragment>
+            </div>
+        </div>
     )
 }
 
