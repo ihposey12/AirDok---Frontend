@@ -5,6 +5,19 @@ import Button from '@material-ui/core/button'
 const UserComments = () => {
     const user = useSelector(state => state.user)
 
+    const handleDelete = (user) => {
+        const token = localStorage.token
+        fetch(`http://localhost:3000/users/${user.id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`
+            },
+        })
+            localStorage.clear('token', 'user')
+            window.location.href = '/'
+    }
+
     return (
         <div style={{display: 'flex', justifyContent: 'center'}}>
             {console.log(user)}
@@ -15,8 +28,7 @@ const UserComments = () => {
                 <h3>{user.username}</h3>
                 <h4>{user.name}</h4>
                 <h4>{user.email}</h4>
-                <Button variant='contained' color='secondary'>Edit</Button>
-                <Button variant='contained' color='secondary'>Delete</Button>
+                <Button onClick={() => handleDelete(user)} variant='contained' color='secondary'>Delete</Button>
             </div>
             <br></br>
             <br></br>
@@ -27,7 +39,6 @@ const UserComments = () => {
                         <h4>{comment.title}</h4>
                         <h5>{comment.description}</h5>
                         <h6>{comment.created_at}</h6>
-                        <Button variant='contained' color='secondary'>Edit</Button>
                         <Button variant='contained' color='secondary'>Delete</Button>
                     </div>
                 ))}

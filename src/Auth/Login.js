@@ -53,7 +53,7 @@ const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.history.push('/home/account')
+    props.history.push('/home')
     fetch(api + 'login', {
       method: 'POST',
       headers: {
@@ -79,7 +79,7 @@ const Login = (props) => {
         type: 'SET_USER',
         user: data.user
         })
-      props.history.push('/home/account')
+      props.history.push('/home')
     }
   }
 

@@ -7,7 +7,7 @@ export const initialState = {
     comments: [],
     userComment: null,
     startDateInput: '',
-    endDateInput: '',
+    endDateInput: ''
 }
 
 export const reducer = (state=initialState, action) => {
@@ -55,7 +55,7 @@ export const reducer = (state=initialState, action) => {
         case 'ADD_HANGAR_RENTAL':
             return {
                 ...state,
-                user: {...state.user, hangar_rentals: [...state.user.hangar_rentals, action.newHangarRental]}
+                user: {...state?.user, hangar_rentals: [...state.user?.hangar_rentals, action.newHangarRental]}
             }
         default:
             return state;

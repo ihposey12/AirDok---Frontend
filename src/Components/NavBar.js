@@ -38,7 +38,7 @@ const NavBar = () => {
                     <Button component={Link} to='/home/account'>
                         <AccountCircleIcon fontSize='inherit' style={{fontSize: '40px'}}>
                         </AccountCircleIcon>
-                            <p style={{fontWeight: 'bold', fontSize: '15px'}}>{user.username}</p>
+                            <p style={{fontWeight: 'bold', fontSize: '15px'}}>{user?.username}</p>
                     </Button>
                 </div>
                 {!localStorage.token && <Redirect to='/login' />}

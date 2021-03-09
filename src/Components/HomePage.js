@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Foot from './Foot'
 import Hangars from './Hangars'
 import NavBar from './NavBar'
@@ -7,7 +7,7 @@ import '../App.css'
 const HomePage = (props) => {
 
     return (
-        <Fragment style={{backgroundColor: 'lightgray'}}>
+        <div style={{backgroundColor: 'lightgray'}}>
             <NavBar />
             <br></br>
             <br></br>
@@ -16,7 +16,7 @@ const HomePage = (props) => {
             </div>
             <Hangars history={props.history} />
             <Foot />
-        </Fragment>
+        </div>
     )
 }
 

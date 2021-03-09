@@ -12,7 +12,7 @@ const PastRentals = () => {
             <div class='ui clearing segment' style={{display: 'flex', justifyContent: 'center'}}>
                 {user ?
                 <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', rowGap: '1rem'}}>
-                    {user.hangar_rentals.map(rental => {
+                    {user.hangar_rentals?.map(rental => {
                         // return <HangarCard hangar={rental.hangar} key={rental.hangar.id} />
                         return <div class='ui clearing segment'>
                             <br></br>

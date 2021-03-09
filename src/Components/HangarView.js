@@ -8,7 +8,6 @@ import Modal from 'react-modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-daterangepicker/daterangepicker.css'
 import Checkout from './Checkout'
-import CommentForm from './CommentForm'
 
 const HangarView = () => {
     const dispatch = useDispatch()
@@ -133,7 +132,9 @@ const HangarView = () => {
                     return <Comment key={comment.id} comment={comment} />
                 })}
             </div>
-            <CommentForm />
+            <div>
+                
+            </div>
             <Foot />
         </div>
         :
