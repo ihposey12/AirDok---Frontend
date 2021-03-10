@@ -79,16 +79,18 @@ const HangarView = () => {
         <div>
             <NavBar />
             <div class='ui clearing segment'>
-                <h1>{hangar.title}<p>({hangar.airport_codesize})</p></h1>
-                <img src={hangar.picture} alt='Selected Hangar'></img>
-                <br></br>
-                <h2>{hangar.description}</h2>
-                <br></br>
-                <h3><b>Size:</b> <u>{hangar.size}</u></h3>
-                <br></br>
-                <h3><b>Where</b>: <u>{hangar.city}, {hangar.state}</u></h3>
-                <br></br>
-                <h3>${hangar.price}.00/Per Day</h3>
+                <div class='ui clearing segment'>
+                    <h1>{hangar.title}<p>({hangar.airport_codesize})</p></h1>
+                    <img src={hangar.picture} alt='Selected Hangar'></img>
+                    <br></br>
+                    <h2>{hangar.description}</h2>
+                    <br></br>
+                    <h3><b>Size:</b> <u>{hangar.size}</u></h3>
+                    <br></br>
+                    <h3><b>Where</b>: <u>{hangar.city}, {hangar.state}</u></h3>
+                    <br></br>
+                    <h3>${hangar.price}.00/Per Day</h3>
+                </div>
                 <br></br>
                 <Button variant='contained' color='secondary' onClick={() => setModalIsOpen(true)}>Reserve</Button>
                 <br></br>
