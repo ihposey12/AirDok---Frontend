@@ -20,7 +20,7 @@ const PastRentals = () => {
                         {user.hangar_rentals?.map(rental => {
                             // return <HangarCard hangar={rental.hangar} key={rental.hangar.id} />
                             return <div class='ui clearing segment'>
-                                <Link to={rental.hangar.id}><h4>{rental.hangar.title}</h4></Link>
+                                <Link to={`/home/${rental.hangar.id}`}><h4>{rental.hangar.title}</h4></Link>
                                 <br></br>
                                 Arrived: {rental.start_date}
                                 <br></br>

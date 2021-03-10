@@ -21,7 +21,7 @@ const UserComments = () => {
 
     const commentDelete = (comment) => {
         const token = localStorage.token
-        fetch('http:localhost:3000/comments', {
+        fetch(`http://localhost:3000/comments/${comment.id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const UserComments = () => {
             {user ?
         <div class='ui clearing segment'>
             <h1>ACCOUNT</h1>
-            <div class='ui clearing segment' style={{margin: 'auto', width: '50%'}}>
+            <div class='ui clearing segment' style={{margin: 'auto', width: '250px'}}>
                 <h3>{user.username}</h3>
                 <h4>{user.name}</h4>
                 <h4>{user.email}</h4>
@@ -64,7 +64,7 @@ const UserComments = () => {
             <div>
             <h1>YOUR COMMENTS</h1>
                 {user.comments?.map(comment => (
-                    <div class='ui clearing segment'>
+                    <div class='ui clearing segment' style={{width: '600px', height: '250px'}}>
                         <h4>{comment.title}</h4>
                         <h5>{comment.description}</h5>
                         <h5>Rating: {comment.rating}</h5>

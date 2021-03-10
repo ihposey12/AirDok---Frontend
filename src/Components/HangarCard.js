@@ -3,7 +3,7 @@ import React from 'react'
 const HangarCard = ({hangar, handleClick}) => {
     return (
         <div class='three column grid' style={{paddingLeft: '5%'}}>
-                <div onClick={() => handleClick(hangar.id)} class="ui special cards">
+                <div onClick={() => handleClick(hangar)} class="ui special cards">
                     <div class="ui purple card" style={{border: 'solid'}}>
                         <div class="blurring dimmable image ui blurring image">
                             <div class="ui inverted dimmer">

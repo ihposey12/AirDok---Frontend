@@ -1,12 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavBar from './NavBar'
 import Foot from './Foot'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import HangarCard from './HangarCard'
 import Button from '@material-ui/core/button'
 
-const UpcomingRentals = () => {
+const UpcomingRentals = (props) => {
     const user = useSelector(state => state.user)
+    const dispatch = useDispatch()
+
+    // const handleDelete = () => {
+    //     const token = localStorage.token
+    //     fetch('http:localhost:3000/', {
+    //         method: 'DELETE',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             Authorization: `Bearer ${token}`
+    //         },
+    //     })
+    // }
+
+    const handleClick = (hangar) => {
+        dispatch({
+            type: 'SET_SELECT_HANGAR',
+            selectHangar: hangar
+        })
+        props.history.push(`/home/${hangar.id}`)
+    }
     
     return (
         <div>
@@ -22,6 +42,7 @@ const UpcomingRentals = () => {
                                 <HangarCard 
                                     hangar={rental?.hangar} 
                                     key={rental.hangar?.id}
+                                    handleClick={handleClick}
                                 />
                                 <div style={{textAlign: 'center', backgroundColor: 'white', height: '150px', width: '200px', borderRadius: '11%', border: 'solid'}}>
                                     <h4>Arrival: {rental?.start_date}</h4>

@@ -17,7 +17,7 @@ const Hangars = (props) => {
 
     const renderCard = () => {
         return hangars.map(hangar => (
-            <HangarCard hangar={hangar} key={hangar.id} handleClick={() => handleClick(hangar)} />
+            <HangarCard hangar={hangar} key={hangar.id} handleClick={handleClick} />
     ))}
 
     return (
@@ -26,7 +26,7 @@ const Hangars = (props) => {
                 <h1 style={{fontSize: '40px', fontFamily: 'fantasy', fontStyle: 'italic', fontWeight: '15px'}}><u>FIND YOUR DOK</u></h1>
             </div>
             <br></br>
-            <div style={{display: 'flex', flexWrap: 'wrap', padding: '25px', justifyContent: 'center', rowGap: '14px', columnGap: '1px', backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', border: 'solid 10px'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', padding: '25px', justifyContent: 'center', rowGap: '14px', columnGap: '1px', backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', border: 'solid 5px'}}>
                 {renderCard()}
             </div>
         </div>

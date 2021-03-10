@@ -79,7 +79,7 @@ export const reducer = (state=initialState, action) => {
             return {
                 ...state,
                 hangars: state.hangars.map(hangar => {
-                    if(hangar.id === action.hangar.id) {
+                    if(hangar.id === action.hangar?.id) {
                         return action.hangar
                     } else {
                         return hangar

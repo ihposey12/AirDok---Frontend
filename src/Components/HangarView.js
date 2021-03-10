@@ -20,7 +20,6 @@ const HangarView = () => {
     const [startDate, setStartDate] = useState('')
     const [endDate, setEndDate] = useState('')
     const [commentFormOpen, setCommentFormOpen] = useState(false)
-    console.log(user)
 
     useEffect(() => {
         if(!hangar) {
@@ -57,16 +56,15 @@ const HangarView = () => {
             },
             body: JSON.stringify({
                 hangar_rental: {
-                start_date: startDate,
-                end_date: endDate,
-                hangar_id: hangar.id,
-                user_id: user.id
+                    start_date: startDate,
+                    end_date: endDate,
+                    hangar_id: hangar?.id,
+                    user_id: user?.id
             }
             })
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             dispatch({
                 type: 'ADD_HANGAR_RENTAL',
                 user: data.user
@@ -133,7 +131,7 @@ const HangarView = () => {
             </div>
             <div class='ui clearing segment'>
                 <h1>COMMENTS</h1>
-                {hangar.comments.map(comment => {
+                {hangar.comments?.map(comment => {
                     return <Comment key={comment.id} comment={comment} />
                 })}
             </div>

@@ -8,9 +8,10 @@ const CommentForm = (props) => {
     const commentDescription = useSelector(state => state.commentDescription)
     const commentRating = useSelector(state => state.commentRating)
     const dispatch = useDispatch()
+    console.log(props.hangar)
 
     const handlePost = () => {
-        console.log(commentTitle, commentDescription, commentRating)
+        console.log(props.hangar.id)
         fetch('http://localhost:3000/comments', {
             method: 'POST',
             headers: {
@@ -23,8 +24,8 @@ const CommentForm = (props) => {
                     title: commentTitle,
                     description: commentDescription,
                     rating: commentRating,
-                    user_id: user.id,
-                    hangar_id: props.hangar.id,
+                    user_id: user?.id,
+                    hangar_id: props.hangar?.id,
             }})
         })
         .then(res => res.json())

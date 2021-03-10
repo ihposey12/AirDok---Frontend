@@ -65,11 +65,11 @@ const Login = (props) => {
       })
     })
       .then(res => res.json())
-      .then(data => authResponse(data))
+      .then(data => {
+        authResponse(data)})
   }
 
   const authResponse = (data) => {
-    console.log(data)
     if (data.error) {
       alert(data.error)
     } else {
@@ -77,7 +77,7 @@ const Login = (props) => {
       localStorage.token = token
       dispatch({
         type: 'SET_USER',
-        user: data.user
+        user: data?.user
         })
       props.history.push('/home')
     }
