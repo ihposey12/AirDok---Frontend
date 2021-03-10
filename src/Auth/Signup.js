@@ -80,9 +80,10 @@ const Signup = (props) => {
             type: 'SET_USER',
             user: res.data.user
           })
-          props.history.push('/home/about')
+          props.history.push('/login')
         }
       })
+      alert('Flying you to the login page!')
   }
 
   return (

@@ -13,7 +13,7 @@ const PastRentals = () => {
             <div class='ui clearing segment' style={{backgroundImage: 'url(https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg)'}}>
                 <br></br>
                 <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <h1 style={{textAlign: 'center', fontSize: '40px', fontFamily: 'fantasy', fontWeight: '450px', fontStyle: 'italic'}}><u>RESERVAION HISTORY</u></h1>
+                    <h1 style={{textAlign: 'center', fontSize: '40px', fontFamily: 'fantasy', fontWeight: '450px', fontStyle: 'italic'}}><u>RESERVATION HISTORY</u></h1>
                     <br></br>
                     {user ?
                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', rowGap: '1rem'}} >

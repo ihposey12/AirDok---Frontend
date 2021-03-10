@@ -17,6 +17,7 @@ const UserComments = () => {
         })
             localStorage.clear('token', 'user')
             window.location.href = '/'
+            alert('Your account has been deleted.')
     }
 
     const commentDelete = (comment) => {
@@ -43,12 +44,12 @@ const UserComments = () => {
                 hangar: data.hangar
             })
         })
+        alert('Your comment has been deleted!')
     }
 
     return (
         <div style={{display: 'flex', justifyContent: 'center'}}>
             <br></br>
-            {console.log(user)}
             {user ?
         <div class='ui clearing segment'>
             <h1>ACCOUNT</h1>

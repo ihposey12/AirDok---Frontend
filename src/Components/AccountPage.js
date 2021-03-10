@@ -11,7 +11,6 @@ const AccountPage = () => {
     useEffect(() => {
         const token = localStorage.getItem('token')
 
-        console.log(user)
         if(!user) {
         if(token) {
           fetch('http://localhost:3000/persist', {

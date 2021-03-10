@@ -70,6 +70,7 @@ const HangarView = () => {
                 user: data.user
             })
         })
+        alert('Thank you! Your reservation has been saved! Please Note: You will be charged the day before your arrival.')
     }
 
     return (

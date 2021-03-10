@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import NavBar from './NavBar'
 import Foot from './Foot'
 import { useDispatch, useSelector } from 'react-redux'
 import HangarCard from './HangarCard'
-import Button from '@material-ui/core/button'
 
 const UpcomingRentals = (props) => {
     const user = useSelector(state => state.user)
@@ -44,11 +43,9 @@ const UpcomingRentals = (props) => {
                                     key={rental.hangar?.id}
                                     handleClick={handleClick}
                                 />
-                                <div style={{textAlign: 'center', backgroundColor: 'white', height: '150px', width: '200px', borderRadius: '11%', border: 'solid'}}>
+                                <div style={{textAlign: 'center', backgroundColor: 'white', height: '80px', width: '200px', borderRadius: '11%', border: 'solid'}}>
                                     <h4>Arrival: {rental?.start_date}</h4>
                                     <h4>Departure: {rental?.end_date}</h4>
-                                    <br></br>
-                                    <Button variant='contained' color='secondary'>Cancel</Button>
                                 </div>
                             </div>
                     })}

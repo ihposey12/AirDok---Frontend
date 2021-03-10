@@ -67,6 +67,7 @@ const Login = (props) => {
       .then(res => res.json())
       .then(data => {
         authResponse(data)})
+        alert('Welcome back!')
   }
 
   const authResponse = (data) => {

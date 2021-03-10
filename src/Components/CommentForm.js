@@ -8,7 +8,6 @@ const CommentForm = (props) => {
     const commentDescription = useSelector(state => state.commentDescription)
     const commentRating = useSelector(state => state.commentRating)
     const dispatch = useDispatch()
-    console.log(props.hangar)
 
     const handlePost = () => {
         console.log(props.hangar.id)
