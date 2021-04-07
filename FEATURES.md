@@ -1,8 +1,11 @@
-# CORE
+# FUTURE FEATURE IMPLEMENTATION
+Guidelines and Ideas
+
+# Core
  1. Rewrite frontend in Native(Java/Kotlin)
  3. Rewrite backend in Node
 
-# FEATURES
+# Features
  1. Email/contact functionality
  2. Pop-up Noitfications
  3. Weather
