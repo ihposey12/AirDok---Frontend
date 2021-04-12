@@ -7,7 +7,7 @@ Guidelines and Ideas
 
 # Basic Features
  1. Login/Register
- 2. List Inventory (Rate Listing, Review Listing, Contact/Leave a Message, Rent Listing)
+ 2. List Inventory (Rate Listing, Review Listing, Contact Host/Leave a Message, Rent Listing)
  4. Profile
  5. Rental History
  6. Refer a Friend
