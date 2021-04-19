@@ -48,3 +48,6 @@ Guidelines and Ideas
  27. Link to Local Events and Attractions
  28. Add Gamification; Levels for number of times rented (Noob/Intermediate/Frequent Flyer/Rock Star)
  29. Receive credit for providing reviews
+ 30. Terms of Service Document
+ 31. Payment Terms of Service
+ 32. Privacy Policy
