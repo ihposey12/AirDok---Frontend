@@ -2,8 +2,10 @@
 Guidelines and Ideas
 
 # Core
- 1. Rewrite frontend in Native(Java/Kotlin)
- 2. Rewrite backend in Node
+ 1. Rewrite frontend in Native(Java/Kotlin) for Mobile Android
+ 2. Use Swift for iOS mobile
+ 3. Keep Frontend in React for Web
+ 4. Rewrite backend in Node
 
 # Basic Features
  1. Login/Register
